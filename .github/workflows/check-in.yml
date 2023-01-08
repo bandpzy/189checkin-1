@@ -59,3 +59,9 @@ jobs:
         do
         python3 checkin.py --username ${user_list[$i]} --password ${pwd_list[$i]}
         done
+
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 5
+        keep_minimum_runs: 3
